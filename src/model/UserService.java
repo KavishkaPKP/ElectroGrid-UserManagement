@@ -40,7 +40,7 @@ if (con == null)
 
 // create a prepared statement
 String query = " insert into users_tbl(`id`,`address`,`contactno`,`email`,`name`)"
-+ " values (?, ?, ?, ?, ?, ?, ?)";
++ " values (?, ?, ?, ?, ?)";
 PreparedStatement preparedStmt = con.prepareStatement(query);
 
 // binding values
