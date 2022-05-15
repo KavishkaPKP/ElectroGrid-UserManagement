@@ -45,6 +45,8 @@ session.setAttribute("statusMsg", stsMsg);
 <li><a href="#" class="nav-link">ElecroGrid Online Platform</a></li>
 </ul>
 </nav>
+
+<br>
 </head>
 
 <body>
@@ -73,24 +75,27 @@ session.setAttribute("statusMsg", stsMsg);
 <%
 out.print(session.getAttribute("statusMsg"));
 %>
+</div>
+</div>
+</div>
+</div>
+</div>
+</form>
+
+</body>
 <br>
+<center>
 <%
 	UserService userObj = new UserService();
 	out.print(userObj.readUserDetails());
 %>
-
-</form>
-
-</body>
+</center>
 
 
 
 
-</div>
-</div>
-</div>
-</div>
-</div>
+
+
 <br>
 
 <br>

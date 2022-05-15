@@ -71,26 +71,18 @@ if (request.getParameter("address") != null)
 
 <form method="post" action="AddUser.jsp">
 
-<input placeholder="Full Name" class="form-control form-control-sm" required name="name" type="text"><br>
-<input placeholder="Address" name="Address" class="form-control form-control-sm" required type="text"><br>
+<input placeholder="Address" name="address" class="form-control form-control-sm" required type="text"><br>
 <input  placeholder="Contact Number" name="contactno" class="form-control form-control-sm" required type="text"><br>
-<input placeholder="Email" name="email" class="form-control form-control-sm" required type="text"><br><br>
+<input placeholder="Email" name="email" class="form-control form-control-sm" required type="text"><br>
+<input placeholder="Full Name" class="form-control form-control-sm" required name="name" type="text"><br><br>
 
 
 <input name="btnSubmit" class="btn btn-info active" type="submit" value="Register"><br><br>
-</form>
-
-
 <%
 out.print(session.getAttribute("statusMsg"));
 %>
 
-
-
-
-
-
-
+</form>
 </body>
 </div>
 </div>
