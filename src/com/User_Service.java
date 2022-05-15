@@ -24,7 +24,6 @@ import org.jsoup.nodes.Document;
 
 public class User_Service {
 
-
 UserService userObj = new UserService();
 @POST
 @Path("/")
@@ -32,12 +31,12 @@ UserService userObj = new UserService();
 @Produces(MediaType.TEXT_PLAIN)
 // insert payment details.
 
-public String insertusers_tbl(@FormParam("name") String name,
+public String insertUser(@FormParam("name") String name,
 @FormParam("address") String address,
 @FormParam("contactno") String contactno,
 @FormParam("email") String email
 ) {
-String output = userObj.insertusers_tbl(address, contactno, email, name);
+	String output = userObj.insertUser(address, contactno, email, name);
 return output;
 }
 
@@ -84,17 +83,17 @@ Document doc = Jsoup.parse(userData, "", Parser.xmlParser());
 
 //Read the value from the element <userId>
 String userID = doc.select("id").text();
-String output = userObj.deleteusers_tbl(userID);
+String output = userObj.deleteUser(userID);
 return output;
 }
 @GET
-@Path("/getUserbyID/{userId}")//view a specific payment
+@Path("/getUserbyID/{id}")//view a specific user
 @Produces(MediaType.TEXT_HTML)
-public String UserProfileDetails(@PathParam("id") String userId) {
+public String UserProfileDetails(@PathParam("id") String id) {
 
 
 
-return userObj.fetchUser(userId);
+return userObj.fetchUser(id);
 }
 
 }

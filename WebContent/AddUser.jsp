@@ -1,4 +1,4 @@
-<%@page import="model.ComplainService" %>
+<%@page import="model.UserService" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -16,17 +16,13 @@ pageEncoding="ISO-8859-1"%>
 
 <%
 //Insert User Data----------------------------------
-if (request.getParameter("name") != null)
+if (request.getParameter("address") != null)
 {
-	ComplainService userObj = new ComplainService();
-String stsMsg = userObj.insertUser(request.getParameter("name"),
-
-
-request.getParameter("address"),
+		UserService userObj = new UserService();
+String stsMsg = userObj.insertUser(request.getParameter("address"),
+request.getParameter("contactno"),
 request.getParameter("email"),
-request.getParameter("contact_no"),
-request.getParameter("account_no"),
-request.getParameter("complain"));
+request.getParameter("name"));
 session.setAttribute("statusMsg", stsMsg);
 }
 
@@ -41,17 +37,16 @@ session.setAttribute("statusMsg", stsMsg);
 
 <body>
 
-<h1>Add Your Complain</h1>
+<h1>Add user</h1>
 
 
-<form method="post" action="AddComplain.jsp">
+<form method="post" action="AddUser.jsp">
 
-User Full Name: <input name="name" type="text"><br><br>
-User Address: <input name="address" type="text"><br><br>
+User Full Name: <input name="address" type="text"><br><br>
+User Address: <input name="contactno" type="text"><br><br>
 Email: <input name="email" type="text"><br><br>
-Contact Number: <input name="contact_no" type="text"><br><br>
-Account No: <input name="account_no" type="text"><br><br>
-Complain: <input name="complain" type="text"><br><br>
+Contact Number: <input name="name" type="text"><br><br>
+
 
 
 

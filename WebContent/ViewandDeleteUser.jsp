@@ -1,8 +1,6 @@
-// view and delete
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 pageEncoding="ISO-8859-1"%>
-<%@page import="model.ComplainService" %>
+<%@page import="model.UserService" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,16 +17,16 @@ pageEncoding="ISO-8859-1"%>
 
 
 //Delete user----------------------------------
-if (request.getParameter("complain_id") != null)
+if (request.getParameter("id") != null)
 {
-	ComplainService userObj = new ComplainService();
-String stsMsg = userObj.deleteUser(request.getParameter("complain_id"));
+	UserService userObj = new UserService();
+String stsMsg = userObj.deleteUser(request.getParameter("id"));
 session.setAttribute("statusMsg", stsMsg);
 }
 
 
 
-ComplainService userObj = new ComplainService();
+UserService userObj = new UserService();
 out.print(userObj.readUserDetails());
 %>
 </body>

@@ -29,7 +29,7 @@ catch (Exception e)
 return con;
 }
 
-public String insertusers_tbl(String id, String address, String contactno, String email, String name)
+public String insertUser(String address, String contactno, String email, String name)
 {
 String output = "";
 try
@@ -105,7 +105,7 @@ output += "<td>" + email + "</td>";
 
 // buttons
 
-output += "<td><form method='post' action='updateUser.jsp'>"
+output += "<td><form method='post' action='UpdateUser.jsp'>"
 
 + "<input name='btnUpdate' type='submit' value='Update User' class='btn btn-secondary'>"
 
@@ -167,7 +167,7 @@ System.err.println(e.getMessage());
 return output;
 }
 
-public String deleteusers_tbl(String id)
+public String deleteUser(String id)
 {
 String output = "";
 try
@@ -220,7 +220,7 @@ output = "<table border='1'><tr><th>address</th>"
 +"<th>contactno</th><th>email</th>"
 + "<th>name</th>";
 
-String query = "select * from users_tbl where id='"+id+"'";
+String query = "select * from users_tbl  where id='"+id+"'";
 
 Statement stmt = con.createStatement();
 ResultSet rs = stmt.executeQuery(query);
