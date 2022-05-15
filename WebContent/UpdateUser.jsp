@@ -6,8 +6,10 @@ pageEncoding="ISO-8859-1"%>
 <html>
 <head>
 <link rel="stylesheet" href="Views/bootstrap.min.css">
-<script src="Components/jquery-3.2.1.min.js"></script>
-<script src="Components/main.js"></script>
+<link rel="stylesheet" type="text/css" href="css/footer.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
@@ -36,40 +38,38 @@ session.setAttribute("statusMsg", stsMsg);
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Register User</title>
+<title>Update User Details</title>
+
+<nav class="navbar navbar-expand-md navbar-dark" style="background-color:#4D4D4D">
+<ul class="navbar-nav">
+<li><a href="#" class="nav-link">ElecroGrid Online Platform</a></li>
+</ul>
+</nav>
 </head>
 
 <body>
+<div class="container">
+<div class="row">
+
+<div class="container col-md-5">
+<div class="card">
+<div class="card-body">
 
 <h1> Update User Details</h1>
-
-<form method="post" action="UpdateUser.jsp">
-User ID:
-<input name="id" type="text"
-class="form-control form-control-sm">
-
-User Address:
-<input name="address" type="text"
-class="form-control form-control-sm">
-
-<br> contect:
-<input name="contactno" type="text"
-class="form-control form-control-sm">
-
-<br> Email:
-<input name="email" type="text"
-class="form-control form-control-sm">
-
-<br> Name:
-<input name="name" type="text"
-class="form-control form-control-sm">
 <br>
 
+<form method="post" action="UpdateUser.jsp">
+
+<input placeholder="User ID" readonly name="id" type="text" class="form-control form-control-sm"><br>
+<input placeholder="Name " name="name" type="text" class="form-control form-control-sm"><br>
+<input  placeholder="Address" name="address" type="text" class="form-control form-control-sm"><br>
+<input placeholder="Contect Number" name="contactno" type="text" class="form-control form-control-sm"><br>
+<input placeholder="Email"  name="email" type="text" class="form-control form-control-sm"><br>
+
+<br>
 <input name="btnsubmit" type="submit" value="update" class="btn btn-primary">
-</form>
-
-
-
+<br>
+<br>
 <%
 out.print(session.getAttribute("statusMsg"));
 %>
@@ -79,7 +79,28 @@ out.print(session.getAttribute("statusMsg"));
 	out.print(userObj.readUserDetails());
 %>
 
-
+</form>
 
 </body>
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<br>
+
+<br>
+<br>
+<!-- Site footer -->
+<footer class="site-footer">
+<div class="container">
+<div class="row">
+<div class="col-sm-12 col-md-6">
+<h6>About</h6>
+<p class="text-justify"> <i> Kavishka P.K.P </i> This project is based on a company named <b>ElectroGrid (EG)</b> who maintains the power grid of the country. They have a system to monitor the power consumption of the users, generate the monthly bills and automatically send to the users, and accept the online payments from the users..</p>
+</div>
 </html>
